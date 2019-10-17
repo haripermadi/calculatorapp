@@ -16,7 +16,6 @@ const Main = () => {
   const [isClear, setIsClear] = useState(false)
   const [operator, setOperator] = useState(null)
   const [prevValue, setPrevValue] = useState(null)
-  const [isWaitSecondValue, setIsWaitSecondValue] = useState(false)
   
   changeOperator = (type) => {
     setOperator(type)
@@ -38,42 +37,8 @@ const Main = () => {
   handleInputNumber = (value) => {
     setCurrentValue(currentValue === '0' || operator!== null ? value :`${currentValue}${value}`)
     setIsClear(true)
-    console.log('NUMBER--input',value,'--curr--',currentValue,'--prev--', prevValue,'--oprerator---', operator,'--iswait---', isWaitSecondValue)
+    // console.log('NUMBER--input',value,'--curr--',currentValue,'--prev--', prevValue,'--oprerator---', operator)
   }
-  
-  // handleInputNumber = (value) => {
-  //   if(isWaitSecondValue) {
-  //     setCurrentValue(`${value}`)
-  //     setIsWaitSecondValue(false)
-  //     setIsClear(true)
-  //   }else{
-  //     setCurrentValue(currentValue === '0' ? value :`${currentValue}${value}`)
-  //     setIsClear(true)
-  //     // setOperator(null)
-  //   }
-  //   console.log('NUMBER--input',value,'--curr--',currentValue,'--prev--', prevValue,'--oprerator---', operator,'--iswait---', isWaitSecondValue)
-  // }
-  
-  // handleButtonOperator = (type) => {
-  //   const valueNumber = parseFloat(currentValue)
-  //   if(operator && isWaitSecondValue) {
-  //     setOperator(type)
-  //     console.log('changeoperator--type',type,'--curr--',currentValue,'--prev--', prevValue,'--oprerator---', operator,'--iswait---', isWaitSecondValue)
-  //     return
-  //   }
-
-  //   if(prevValue === null) {
-  //     setPrevValue(valueNumber)
-  //   } else if(operator) {
-  //     let result = calculate(type, parseFloat(prevValue), valueNumber)
-  //     setCurrentValue(`${result}`)
-  //     setPrevValue(`${result}`)
-  //   }
-  //   setIsWaitSecondValue(true)
-  //   setOperator(type)
-  //   console.log('curr--',currentValue,'--prev--', prevValue,'--oprerator---', operator,'--iswait---', isWaitSecondValue)
-  // }
-  
   
   handlePlusMinus = () => {
     if(currentValue !== '0') {
@@ -92,7 +57,6 @@ const Main = () => {
     setIsClear(false)
     setPrevValue(null)
     setOperator(null)
-    setIsWaitSecondValue(false)
   }
 
   calculate = (type, prev, current) => {

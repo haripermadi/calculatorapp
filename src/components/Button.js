@@ -19,7 +19,7 @@ const Button = ({title, onButtonPress, isZero, buttonColor}) => {
 const styles = StyleSheet.create({
   buttonContainer : {
     flex:1,
-    backgroundColor:'#333333', // #fe9401 = orange #a6a6a6 = grey
+    backgroundColor:'#333333',
     borderRadius:SCREEN_WIDTH / 5,
     justifyContent:'center',
     alignItems:'center',
